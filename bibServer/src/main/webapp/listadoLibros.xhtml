@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Libros Guardados</h1>
+<h:form>
+
+	<h:dataTable value="#{gestionLibrosBean.libros}" var="Libro">
+	
+		<h:column>
+		#{Libro.bib_lib_id}
+		<f:facet name="header">codigo</f:facet>
+		</h:column>
+		
+		<h:column>
+		#{Libro.bib_lib_nombre}
+		<f:facet name="header">nombre</f:facet>
+		</h:column>
+		
+		<h:column>
+		#{Libro.bib_lib_autor}
+		<f:facet name="header">autor</f:facet>
+		</h:column>
+		
+		<h:column>
+		#{Libro.bib_lib_editorial}
+		<f:facet name="header">editorial</f:facet>
+		</h:column>
+		
+		<h:column>
+		#{Libro.bib_lib_copias}
+		<f:facet name="header">copias</f:facet>
+		</h:column>
+	
+	</h:dataTable>
+
+	<h:commandButton value="Regresar" action="guardarLibro">
+	</h:commandButton>
+
+</h:form>
+
+</body> 
+</html>
