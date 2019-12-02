@@ -16,7 +16,7 @@ public class GestionAutoresBean {
 	private GestionAutoresLocal ga;
 	
 	/*Beans properties*/
-	//private int id;
+	private int id;
 	private String nombre;
 	private String apellido;
 	private String genero;
@@ -76,17 +76,17 @@ public class GestionAutoresBean {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public List<Autor> getLibros() {
+	public List<Autor> getAutores() {
 		return autores;
 	}
 
-	public void setLibros(List<Autor> libros) {
+	public void setAutores(List<Autor> autores) {
 		this.autores = autores;
 	}
 
 	public String guardarAutor() {
 		
-		ga.guardarAutor(nombre, apellido, genero, fechaNac, nacionalidad);
+		ga.guardarAutor(id, nombre, apellido, genero, fechaNac, nacionalidad);
 		autores = ga.getAutores();
 		
 		return "listadoAutores";

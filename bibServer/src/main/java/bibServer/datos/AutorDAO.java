@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import bibServer.modelo.Autor;
-import bibServer.modelo.Libro;
 
 @Stateless
 public class AutorDAO {
@@ -43,7 +42,7 @@ public class AutorDAO {
 	
 	public List<Autor> getAutores() {
 		
-		String jpql = "SELECT a FROM Autor a";
+		String jpql = "SELECT * FROM Autor a";
 		Query q = em.createQuery(jpql, Autor.class);
 		
 		List<Autor> autores = q.getResultList();		

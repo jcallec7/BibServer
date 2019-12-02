@@ -17,9 +17,9 @@ public class GestionAutores implements GestionAutoresRemote, GestionAutoresLocal
 
 	private List<Autor> autores = new ArrayList<Autor>();
 	
-	public void guardarAutor(String nombre, String apellido, String genero, String fechaNac, String nacionalidad){
+	public void guardarAutor(int id, String nombre, String apellido, String genero, String fechaNac, String nacionalidad){
 		Autor a = new Autor();  
-		//a.setBib_lib_id(codigo);  
+		a.setId(id);  
 		a.setNombre(nombre);
 		a.setApellido(apellido);
 		a.setGenero(genero);

@@ -5,17 +5,17 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
-import bibServer.modelo.Libro;
-import bibServer.negocio.GestionLibrosLocal;
+import bibServer.modelo.Autor;
+import bibServer.negocio.GestionAutoresLocal;
 
 @ManagedBean
 public class BusquedaAutoresBean {
 	
 	@Inject
-	private GestionLibrosLocal gl;
+	private GestionAutoresLocal gl;
 
 	private String filtro;
-	private List<Libro> libros;
+	private List<Autor> autores;
 	
 	public String getFiltro() {
 		return filtro;
@@ -23,16 +23,16 @@ public class BusquedaAutoresBean {
 	public void setFiltro(String filtro) {
 		this.filtro = filtro;
 	}
-	public List<Libro> getLibros() {
-		return libros;
+	public List<Autor> getAutores() {
+		return autores;
 	}
-	public void setLibros(List<Libro> libros) {
-		this.libros = libros;
+	public void setAutores(List<Autor> autores) {
+		this.autores = autores;
 	}
 	
 	public String buscar() {
 		
-		libros = gl.getLibrosPorNombre(filtro);
+		autores = gl.getAutoresPorNombre(filtro);
 		return null;
 	}
 	

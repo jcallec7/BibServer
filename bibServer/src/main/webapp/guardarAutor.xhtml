@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+	<h:form>
+	
+		<h:outputLabel value = "Nombre">
+		</h:outputLabel>
+		
+		<h:inputText value = "#{gestionAutoresBean.nombre}">
+		</h:inputText>
+		
+		<h:outputLabel value = "Apellido">
+		</h:outputLabel>
+		
+		<h:inputText value = "#{gestionAutoresBean.apellido}">
+		</h:inputText>
+	
+		<h:outputLabel value = "Genero">
+		</h:outputLabel>
+		
+		<h:inputText value = "#{gestionAutoresBean.genero}">
+		</h:inputText>
+		
+		<h:outputLabel value = "Anio Nacimiento">
+		</h:outputLabel>
+		
+		<h:inputText value = "#{gestionAutoresBean.fechaNac}">
+		</h:inputText>
+
+		<h:outputLabel value = "Nacionalidad">
+		</h:outputLabel>
+		
+		<h:inputText value = "#{gestionAutoresBean.nacionalidad}">
+		</h:inputText>
+		
+		<h:commandButton value="Guardar" action="#{gestionAutoresBean.guardarAutor()}">
+		</h:commandButton>
+	
+	</h:form>
+
+</body> 
+</html>
