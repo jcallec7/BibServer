@@ -23,7 +23,7 @@ public class Prestamo implements Serializable{
 	@JoinColumn(name = "bib_prest_id")
 	private List<Cliente> lib_cliente;
 	
-	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name = "bib_prest_id")
 	private List<Libro> lib_libro;
 	
@@ -36,6 +36,8 @@ public class Prestamo implements Serializable{
 		this.bib_prest_id = bib_prest_id;
 	}
 
+	
+	
 	public List<Libro> getLib_libro() {
 		return lib_libro;
 	}
@@ -55,7 +57,7 @@ public class Prestamo implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Libro [codigo=" + bib_prest_id + ", cliente=" + lib_cliente+ " libro=" + lib_libro + "]";
+		return "Libro [codigo=" + bib_prest_id + ", cliente=" + lib_cliente+ " libro=]";
 	}
 
 }

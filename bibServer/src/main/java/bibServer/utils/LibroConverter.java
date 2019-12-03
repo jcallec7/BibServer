@@ -6,9 +6,8 @@ package bibServer.utils;
 	import javax.faces.convert.Converter;
 	import javax.faces.convert.FacesConverter;
 
-import bibServer.modelo.Autor;
-import bibServer.modelo.Libro;
-import bibServer.vista.GestionPrestamosBean;
+	import bibServer.modelo.Libro;
+	import bibServer.vista.GestionPrestamosBean;
 
 	@FacesConverter(value = "libroConverter")
 	public class LibroConverter implements Converter {

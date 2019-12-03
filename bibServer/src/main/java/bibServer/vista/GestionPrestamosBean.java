@@ -23,6 +23,7 @@ public class GestionPrestamosBean {
 	@Inject
 	private GestionClientesLocal gc;
 	
+	@Inject
 	private GestionPrestamoLocal gp;
 	
 	private String codigo;
@@ -38,7 +39,8 @@ public class GestionPrestamosBean {
 
 	@PostConstruct
 	public void init() {
-		listarPrestamos();
+		listarLibros();
+		listarClientes();
 	}
 	
 
