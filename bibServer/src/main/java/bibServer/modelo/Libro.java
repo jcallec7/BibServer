@@ -22,7 +22,7 @@ public class Libro implements Serializable{
 	@Column(name="bib_lib_nombre")
 	private String bib_lib_nombre;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "bib_lib_id")
 	private List<Autor> lib_autores;
 	

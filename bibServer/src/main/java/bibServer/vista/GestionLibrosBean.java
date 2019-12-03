@@ -2,6 +2,7 @@ package bibServer.vista;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
@@ -29,8 +30,13 @@ public class GestionLibrosBean {
 	private int copias;
 	
 	private List<Libro> libros;
+	private Autor autorSeleccionado;
 	
 	
+	@PostConstruct
+	public void init() {
+		listarAutores();
+	}
 	
 	public GestionLibrosLocal getGl() {
 		return gl;
@@ -43,6 +49,14 @@ public class GestionLibrosBean {
 	}
 
 
+
+	public Autor getAutorSeleccionado() {
+		return autorSeleccionado;
+	}
+
+	public void setAutorSeleccionado(Autor autorSeleccionado) {
+		this.autorSeleccionado = autorSeleccionado;
+	}
 
 	public String getCodigo() {
 		return codigo;
@@ -116,7 +130,9 @@ public class GestionLibrosBean {
 
 
 	public String guardarLibro() {
-		gl.guardarLibro(codigo, nombre, autores, editorial, copias);
+		
+		
+		gl.guardarLibro(codigo, nombre, autorSeleccionado, editorial, copias);
 		libros = gl.getLibros();
 		
 		return "listadoLibros";

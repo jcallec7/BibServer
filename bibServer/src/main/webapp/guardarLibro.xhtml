@@ -24,8 +24,8 @@
 		<h:outputLabel value = "Autor(es)">
 		</h:outputLabel>
 		
-		<h:selectOneListbox value = "#{gestionLibrosBean.listarAutores()}">
-			<f:selectItems value = "#{gestionLibrosBean.autores}" var = "autor" itemLabel="#{autor.nombre}" itemValue="#{autor.id}"/>
+		<h:selectOneListbox value = "#{gestionLibrosBean.autorSeleccionado}" converter="autorConverter">
+			<f:selectItems value = "#{gestionLibrosBean.autores}"  var="autor" itemLabel="#{autor.nombre}" itemValue="#{autor}"/>
 		</h:selectOneListbox>
 		
 		<h:outputLabel value = "Editorial">

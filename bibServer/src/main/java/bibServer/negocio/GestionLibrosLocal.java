@@ -10,7 +10,7 @@ import bibServer.modelo.Libro;
 @Local
 public interface GestionLibrosLocal {
 	
-	public void guardarLibro(String codigo, String nombre, List<Autor> autores, String editorial, int copias);
+	public void guardarLibro(String codigo, String nombre, Autor autores, String editorial, int copias);
 	
 	public List<Libro> getLibros();
 	

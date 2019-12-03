@@ -19,11 +19,13 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	private List<Libro> libros = new ArrayList<Libro>();
 	//private List<Autor> autores = new ArrayList<Autor>();
 	
-	public void guardarLibro(String codigo, String nombre, List<Autor> autores, String editorial, int copias){
+	public void guardarLibro(String codigo, String nombre, Autor autores, String editorial, int copias){
 		Libro l = new Libro();  
 		l.setBib_lib_id(codigo);  
 		l.setBib_lib_nombre(nombre);
-		l.setLib_autores(autores);
+		List<Autor> aux = new ArrayList<>();
+		aux.add(autores);
+		l.setLib_autores(aux);
 		l.setBib_lib_editorial(editorial);
 		l.setBib_lib_copias(copias);
 		System.out.println(l);
