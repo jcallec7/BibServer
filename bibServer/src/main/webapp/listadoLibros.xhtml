@@ -10,7 +10,7 @@
 <h1>Libros Guardados</h1>
 <h:form>
 
-	<h:dataTable value="#{gestionLibrosBean.libros}" var="Libro">
+	<h:dataTable value="#{gestionLibrosBean.gl.libros}" var="Libro">
 	
 		<h:column>
 		#{Libro.bib_lib_id}
@@ -23,8 +23,8 @@
 		</h:column>
 		
 		<h:column>
-		#{Libro.bib_lib_autor}
-		<f:facet name="header">autor</f:facet>
+		#{Libro.lib_autores}
+		<f:facet name="header">autores</f:facet>
 		</h:column>
 		
 		<h:column>

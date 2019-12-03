@@ -5,7 +5,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import bibServer.modelo.Autor;
 import bibServer.modelo.Libro;
+import bibServer.negocio.GestionAutoresLocal;
 import bibServer.negocio.GestionLibrosLocal;
 
 @ManagedBean
@@ -15,10 +17,14 @@ public class GestionLibrosBean {
 	@Inject
 	private GestionLibrosLocal gl;
 	
+	@Inject
+	private GestionAutoresLocal ga;
+	
+	
 	/*Beans properties*/
 	private String codigo;
 	private String nombre;
-	private String autor;
+	private List<Autor> autores;
 	private String editorial;
 	private int copias;
 	
@@ -59,17 +65,16 @@ public class GestionLibrosBean {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 
-
-
-	public String getAutor() {
-		return autor;
+	public List<Autor> getAutores() {
+		return autores;
 	}
 
 
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setAutores(List<Autor> autores) {
+		this.autores = autores;
 	}
 
 
@@ -111,11 +116,14 @@ public class GestionLibrosBean {
 
 
 	public String guardarLibro() {
-		
-		gl.guardarLibro(codigo, nombre, autor, editorial, copias);
+		gl.guardarLibro(codigo, nombre, autores, editorial, copias);
 		libros = gl.getLibros();
 		
 		return "listadoLibros";
+	}
+	
+	public void listarAutores() {
+		this.autores = this.ga.getAutores();
 	}
 	
 }

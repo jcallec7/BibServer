@@ -21,12 +21,13 @@
 		<h:inputText value = "#{gestionLibrosBean.nombre}">
 		</h:inputText>
 		
-		<h:outputLabel value = "Autor">
+		<h:outputLabel value = "Autor(es)">
 		</h:outputLabel>
 		
-		<h:inputText value = "#{gestionLibrosBean.autor}">
-		</h:inputText>
-	
+		<h:selectOneListbox value = "#{gestionLibrosBean.listarAutores()}">
+			<f:selectItems value = "#{gestionLibrosBean.autores}" var = "autor" itemLabel="#{autor.nombre}" itemValue="#{autor.id}"/>
+		</h:selectOneListbox>
+		
 		<h:outputLabel value = "Editorial">
 		</h:outputLabel>
 		

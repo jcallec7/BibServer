@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import bibServer.datos.LibroDAO;
+import bibServer.modelo.Autor;
 import bibServer.modelo.Libro;
 import java.util.ArrayList;
 
@@ -16,12 +17,13 @@ public class GestionLibros implements GestionLibrosRemote, GestionLibrosLocal {
 	private LibroDAO dao;
 
 	private List<Libro> libros = new ArrayList<Libro>();
+	//private List<Autor> autores = new ArrayList<Autor>();
 	
-	public void guardarLibro(String codigo, String nombre, String autor, String editorial, int copias){
+	public void guardarLibro(String codigo, String nombre, List<Autor> autores, String editorial, int copias){
 		Libro l = new Libro();  
 		l.setBib_lib_id(codigo);  
 		l.setBib_lib_nombre(nombre);
-		l.setBib_lib_autor(autor);
+		l.setLib_autores(autores);
 		l.setBib_lib_editorial(editorial);
 		l.setBib_lib_copias(copias);
 		System.out.println(l);
