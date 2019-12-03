@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Autores guardados</h1>
+
+
+<h:form>
+
+Filtro de búsqueda : <h:inputText value="#{busquedaClientesBean.filtro}"/>
+<h:commandButton action="#{busquedaClientesBean.buscar()}" value="Buscar" />
+
+<h:dataTable value="#{busquedaClientesBean.autores}" var="cliente">
+
+	<h:column>
+		#{cliente.id}
+		<f:facet name="header">Código</f:facet>
+	</h:column>
+	<h:column>
+		#{cliente.nombre}
+		<f:facet name="header">Nombre</f:facet>
+	</h:column>
+	<h:column>
+		#{cliente.apellido}
+		<f:facet name="header">Apellido</f:facet>
+	</h:column>
+
+</h:dataTable>
+
+
+<h:commandButton value="Regresar" action="guardarCliente">
+</h:commandButton>
+
+</h:form>
+
+</body> 
+</html>
