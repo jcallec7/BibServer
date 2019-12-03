@@ -18,7 +18,6 @@ import bibServer.vista.GestionLibrosBean;
 	                ctx.getApplication().getExpressionFactory()
 	                        .createValueExpression(ctx.getELContext(),
 	                                "#{gestionLibrosBean}", GestionLibrosBean.class);
-
 	        GestionLibrosBean beers = (GestionLibrosBean)vex.getValue(ctx.getELContext());
 	        for(Autor a : beers.getAutores()) {
 	        	if(a.getId()== Integer.valueOf(beerId)) {
